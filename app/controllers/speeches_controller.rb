@@ -7,7 +7,6 @@ respond_to :html, :xml, :json
   end
   
   def create
-    
     @speech = Speech.new(params[:speech])
     escape_phrase = CGI.escape(@speech.phrase)
     url = "http://translate.google.com/translate_tts?tl=#{@speech.lang}&q=#{escape_phrase}"
