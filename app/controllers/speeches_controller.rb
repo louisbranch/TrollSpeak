@@ -7,12 +7,12 @@ respond_to :html, :xml, :json
   end
   
   def create
-    require 'cgi'
+    #require 'cgi'
   
     @speech = Speech.new(params[:speech])
-    escape_phrase = CGI.escape(@speech.phrase)
-    url = "http://translate.google.com/translate_tts?tl=#{@speech.lang}&q=#{escape_phrase}"
-    @speech.url = BITLY_CLIENT.shorten(url)
+    #escape_phrase = CGI.escape(@speech.phrase)
+    #url = "http://translate.google.com/translate_tts?tl=#{@speech.lang}&q=#{escape_phrase}"
+    #@speech.url = BITLY_CLIENT.shorten(url)
     #@speech.url = url
     if @speech.save
       flash[:message] = @speech.url.short_url
