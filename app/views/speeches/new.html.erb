@@ -1,0 +1,9 @@
+<h1>TrollSpeak</h1>
+ <% if flash[:error] %>
+    <div id="form_error"><%= flash[:error] %></div>
+  <% end %>
+<%= render :partial => "form" %>
+<% if flash[:message] %>
+    <div id="shorten_url"><%= flash[:message] %></div>
+    <div id="disclaimer"><small>Disclaimer: The Google API was not intended to be used outside its services. As a result, the above URL can give an error, specially if you are using it several times.</small></div>
+<% end %>
