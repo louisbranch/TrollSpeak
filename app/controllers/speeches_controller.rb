@@ -15,10 +15,10 @@ respond_to :html, :xml, :json
     @speech.url = shorten_url.short_url
     if @speech.save
       flash[:message] = @speech.url
-      redirect_to speeches_url
+      redirect_to root_path
     else
       flash[:error] = "An error occurred! Did you fill all fields?"
-      redirect_to speeches_url
+      redirect_to root_path
     end
   end
 end
