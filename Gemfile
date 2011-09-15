@@ -19,7 +19,6 @@ end
 gem 'jquery-rails'
 
 #Luiz
-gem 'cgi'
 gem 'execjs'
 gem 'therubyracer'
 gem 'bitly'
