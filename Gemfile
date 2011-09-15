@@ -23,7 +23,6 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'bitly'
 
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -40,4 +39,9 @@ end
 
 group :development do
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+end
+
+group :production do
+  gem 'therubyracer-heroku'
+  gem 'pg'
 end
