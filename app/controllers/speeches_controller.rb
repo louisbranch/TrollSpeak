@@ -14,7 +14,7 @@ respond_to :html, :xml, :json
     shorten_url = BITLY_CLIENT.shorten(url)
     @speech.url = shorten_url.short_url
     if @speech.save
-      #flash[:message] = @speech.url
+      flash[:message] = @speech.url
       redirect_to speeches_url
     else
       flash[:error] = "An error occurred! Did you fill all fields?"
