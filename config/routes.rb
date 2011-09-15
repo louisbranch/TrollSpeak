@@ -1,6 +1,6 @@
 Trollspeak::Application.routes.draw do
   resources :speeches
-  root :to => 'speeches#new'
+  root :to => 'speeches#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

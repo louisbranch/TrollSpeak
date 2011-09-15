@@ -2,7 +2,7 @@ class SpeechesController < ApplicationController
 
 respond_to :html, :xml, :json
 
-  def new
+  def index
     @speech = Speech.new
   end
   
