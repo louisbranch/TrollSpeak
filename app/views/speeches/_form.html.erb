@@ -1,4 +1,4 @@
-<%= form_for @speech do |form| %>
+<%= form_for @speech, :remote => true do |form| %>
   <%= form.text_field :phrase, :id => "speech_phrase", :size => "30", :maxlength => "50", :placeholder => "Haters gonna hate!" %>
   <%= form.select(:lang, options_for_select([["English","en"],["Português","pt-BR"]], @speech.lang))%>
   <%= form.submit "Troll me", :id => "speech_action" %>

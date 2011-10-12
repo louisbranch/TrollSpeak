@@ -2,7 +2,7 @@ class SpeechesController < ApplicationController
 
 respond_to :html, :xml, :json
 
-  def index
+  def new
     @speech = Speech.new
   end
   
@@ -12,10 +12,7 @@ respond_to :html, :xml, :json
     url = "http://translate.google.com/translate_tts?tl=#{@speech.lang}&q=#{escape_phrase}"
     shorten_url = BITLY_CLIENT.shorten(url)
     @speech.url = shorten_url.short_url
-    if @speech.save
-      flash[:message] = @speech.url
-      redirect_to root_path
-    else
+    if !@speech.save
       flash[:error] = "An error occurred! Did you fill all fields?"
       redirect_to root_path
     end
